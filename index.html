@@ -1,37 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>Assistente AI</title>
-
-<style>
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#f5f5f5;
-    font-family:Arial,sans-serif;
-}
-
-#copilot{
-    width:900px;
-    height:700px;
-}
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Assistente AI Copilot con conversazione vocale">
+  <title>Assistente AI vocale</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <main class="app-shell">
+    <section class="assistant" aria-labelledby="assistant-title">
+      <header class="assistant__header">
+        <div>
+          <p class="eyebrow">Microsoft Copilot Studio</p>
+          <h1 id="assistant-title">Assistente AI</h1>
+        </div>
+        <div class="status" role="status" aria-live="polite">
+          <span id="status-dot" class="status__dot"></span>
+          <span id="status-text">Connessione…</span>
+        </div>
+      </header>
 
-<div id="copilot">
-    <!DOCTYPE html>
-        <html style="height: 100%;">
-            <body style="height: 100%; margin: 0;">
-                <iframe src="https://copilotstudio.microsoft.com/environments/Default-8b87af7d-8647-4dc7-8df4-5f69a2011bb5/bots/cr405_agentcreator_xF8-4L/webchat?__version__=2&enableFileAttachment=false&cliAgent=true" frameborder="0" style="width: 100%; height: 100%; border: 0;"></iframe>
-            </body>
-        </html>
-</div>
+      <div id="configuration-error" class="notice" role="alert" hidden>
+        <strong>Configurazione incompleta.</strong>
+        <span id="configuration-error-text"></span>
+      </div>
 
+      <div id="webchat" class="webchat" role="region" aria-label="Conversazione con l'assistente"></div>
+
+      <footer class="voice-controls">
+        <button id="microphone-button" class="voice-button" type="button" disabled
+                aria-label="Inizia a parlare" aria-pressed="false">
+          <span class="voice-button__icon" aria-hidden="true">🎙️</span>
+          <span id="microphone-label">Parla</span>
+        </button>
+        <button id="stop-button" class="secondary-button" type="button" disabled>
+          Interrompi voce
+        </button>
+        <label class="voice-toggle">
+          <input id="voice-output-toggle" type="checkbox" checked>
+          Leggi le risposte
+        </label>
+      </footer>
+
+      <p id="voice-help" class="voice-help">
+        Premi “Parla”, autorizza il microfono e formula una domanda in italiano.
+      </p>
+    </section>
+  </main>
+
+  <noscript>Per utilizzare l’assistente devi abilitare JavaScript.</noscript>
 </body>
 </html>
