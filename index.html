@@ -1,94 +1,33 @@
 <!DOCTYPE html>
 <html lang="it">
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agent Architect</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <title>Test WebChat</title>
 
-    https://cdn.botframework.com/botframework-webchat/latest/webchat.jsscript>
+    <script src="https://cdn.com/botframework-webchat/latest/webchat.jsscript>
 
-    <script src="config.js"></script>
 </head>
 
 <body>
 
-<div class="app-shell">
+<h1>Test caricamento WebChat</h1>
 
-    <section class="assistant">
+<div id="result"></div>
 
-        <header class="assistant__header">
+<script>
 
-            <div>
-                <p class="eyebrow">AI Agent Architect</p>
-                <h1>Voice Assistant</h1>
-            </div>
+if (window.WebChat) {
+    document.getElementById("result").innerHTML =
+        "<h2 style='color:green'>WebChat caricata correttamente</h2>";
+} else {
+    document.getElementById("result").innerHTML =
+        "<h2 style='color:red'>WebChat NON caricata</h2>";
+}
 
-            <div class="status">
-                <span id="status-dot" class="status__dot"></span>
-                <span id="status-text">Connessione...</span>
-            </div>
-
-        </header>
-
-        <div
-            id="configuration-error"
-            class="notice"
-            hidden
-        >
-            <strong>Errore</strong>
-            <span id="configuration-error-text"></span>
-        </div>
-
-        <div id="webchat" class="webchat"></div>
-
-        <div class="voice-controls">
-
-            <button
-                id="microphone-button"
-                class="voice-button"
-                disabled
-            >
-                <span>🎤</span>
-                <span id="microphone-label">Parla</span>
-            </button>
-
-            <button
-                id="stop-button"
-                class="secondary-button"
-                disabled
-            >
-                Interrompi voce
-            </button>
-
-            <label class="voice-toggle">
-
-                <input
-                    id="voice-output-toggle"
-                    type="checkbox"
-                    checked
-                >
-
-                Leggi le risposte
-
-            </label>
-
-        </div>
-
-        <p
-            id="voice-help"
-            class="voice-help"
-        >
-            Premi Parla e fai una domanda.
-        </p>
-
-    </section>
-
-</div>
-
-<script src="app.js"></script>
+</script>
 
 </body>
-
 </html>
