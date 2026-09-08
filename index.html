@@ -1,16 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <meta charset=    <title>HELLO TEST</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Architect</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    https://cdn.botframework.com/botframework-webchat/latest/webchat.jsscript>
+
+    <script src="config.js"></script>
 </head>
 
 <body>
 
-<h1>HELLO MATTEO</h1>
+<div class="app-shell">
 
-<script>
-alert("OK");
-</script>
+    <section class="assistant">
+
+        <header class="assistant__header">
+
+            <div>
+                <p class="eyebrow">AI Agent Architect</p>
+                <h1>Voice Assistant</h1>
+            </div>
+
+            <div class="status">
+                <span id="status-dot" class="status__dot"></span>
+                <span id="status-text">Connessione...</span>
+            </div>
+
+        </header>
+
+        <div
+            id="configuration-error"
+            class="notice"
+            hidden
+        >
+            <strong>Errore</strong>
+            <span id="configuration-error-text"></span>
+        </div>
+
+        <div id="webchat" class="webchat"></div>
+
+        <div class="voice-controls">
+
+            <button
+                id="microphone-button"
+                class="voice-button"
+                disabled
+            >
+                <span>🎤</span>
+                <span id="microphone-label">Parla</span>
+            </button>
+
+            <button
+                id="stop-button"
+                class="secondary-button"
+                disabled
+            >
+                Interrompi voce
+            </button>
+
+            <label class="voice-toggle">
+
+                <input
+                    id="voice-output-toggle"
+                    type="checkbox"
+                    checked
+                >
+
+                Leggi le risposte
+
+            </label>
+
+        </div>
+
+        <p
+            id="voice-help"
+            class="voice-help"
+        >
+            Premi Parla e fai una domanda.
+        </p>
+
+    </section>
+
+</div>
+
+<script src="app.js"></script>
 
 </body>
 </html>
