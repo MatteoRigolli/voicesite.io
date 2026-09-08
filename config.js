@@ -3,7 +3,7 @@
 // Channels > Web app > Token endpoint
 // Il token endpoint di un agente pubblico non è una chiave Azure Speech.
 window.VOICE_SITE_CONFIG = Object.freeze({
-  tokenEndpoint: "I83C3oiD2Nqzjyr53oGLBKtIPD1MKjENdqOoIAZNjTHtucSb7WM4JJQQJ99CIAC5RqLJAArohAAABAZBSvQPz.8Hs3I0McwPq573fvZHSulMznryCWxWMRwvtTGimECshfPFfSMN5DJQQJ99CIAC5RqLJAArohAAABAZBSZeeV",
+  tokenEndpoint: "https://default8b87af7d86474dc78df45f69a2011b.b5.environment.api.powerplatform.com/powervirtualagents/botsbyschema/new_AgentCreator2/directline/token?api-version=2022-03-01-preview",
   locale: "it-IT",
   botName: "Assistente AI",
   userName: "Utente"
